@@ -12,9 +12,8 @@ while True:
         if os.path.isfile(data["emojis"][n]["unicode"] + ".png"):
             print "h"
         if data["emojis"][n]["unicode"] != "":
-            print data["emojis"][n]["unicode"]
             os.rename(data["emojis"][n]["unicode"] + ".png",
-                      str(n) + ".png")
+                      data["emojis"][n]["shortname"].replace(":", "") + ".png")
             print "success"
     except WindowsError:
         pass
